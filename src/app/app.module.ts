@@ -14,6 +14,9 @@ import { rotasConfig } from './app.routes';
 import { DadosComponent } from './teste/dados/dados.component';
 import { FormsModule } from '@angular/forms';
 import { ObservadoraComponent } from './navegacao/observadora/observadora.component';
+import { ListaClinicaComponent } from './clinicas/lista-clinica/lista-clinica.component';
+import { ClinicaService } from './clinicas/clinica.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,15 +27,17 @@ import { ObservadoraComponent } from './navegacao/observadora/observadora.compon
     SobreComponent,
     ContatoComponent,
     DadosComponent,
-    ObservadoraComponent
+    ObservadoraComponent,
+    ListaClinicaComponent
   ],
   imports: [
     BrowserModule,
     [RouterModule.forRoot(rotasConfig)],
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    
+    ClinicaService
   ],
   bootstrap: [AppComponent]
 })

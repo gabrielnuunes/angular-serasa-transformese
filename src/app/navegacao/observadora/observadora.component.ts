@@ -16,28 +16,20 @@ export class ObservadoraComponent implements OnInit {
 
   }
 
-
-
-
-
-
-
-
-
   minhaObservadora() : Observable<string> {
 
     return new Observable(subscribe => {
 
       subscribe.next("Olá");
-      subscribe.next("Outro evento");
-
-      setTimeout(() => {
-
-        subscribe.next("Evento com atraso");
-      }, 3000);
-
     })
   }
 
 
 }
+
+//        subscribe.next("Outro evento");
+
+// setTimeout(() => {
+
+//   subscribe.next("Evento com atraso");
+// }, 3000);

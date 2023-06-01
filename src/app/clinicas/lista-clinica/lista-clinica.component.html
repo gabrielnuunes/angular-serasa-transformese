@@ -1,0 +1,9 @@
+<div class="main-container col-sm-6 row">
+    <div *ngFor="let clinica of clinicas" class="card col-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ clinica.nome }}</h5>
+        <p class="card-text">{{ clinica.id }}</p>
+        <a href="#" class="btn btn-primary">Mais detalhes</a>
+      </div>
+    </div>
+  </div>
