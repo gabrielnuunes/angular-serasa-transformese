@@ -17,6 +17,8 @@ import { ObservadoraComponent } from './navegacao/observadora/observadora.compon
 import { ListaClinicaComponent } from './clinicas/lista-clinica/lista-clinica.component';
 import { ClinicaService } from './clinicas/clinica.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ListaPacienteComponent } from './pacientes/lista-paciente/lista-paciente.component';
+import { PacienteService } from './pacientes/paciente.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContatoComponent,
     DadosComponent,
     ObservadoraComponent,
-    ListaClinicaComponent
+    ListaClinicaComponent,
+    ListaPacienteComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    ClinicaService
+    ClinicaService,
+    PacienteService
   ],
   bootstrap: [AppComponent]
 })
