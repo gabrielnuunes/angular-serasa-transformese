@@ -15,16 +15,29 @@ export class ListaPacienteComponent implements OnInit {
 
   ngOnInit(): void {
 
+  this.listaPaciente()
+
+  }
+
+  listaPaciente() {
+
     this.pacienteService.listarPacientes()
 
-      .subscribe(pacientesRecebidos => {
+    .subscribe(pacientesRecebidos => {
 
-        this.pacientes = pacientesRecebidos
-        console.log(this.pacientes)
-      },
-        erro => console.log(erro)
-      )
+      this.pacientes = pacientesRecebidos
+      console.log(this.pacientes)
+    },
+      erro => console.log(erro)
+    )
+  }
 
+  excluir(paciente: Paciente) {
+
+    this.pacienteService.deletar(paciente.id)
+      .subscribe({
+        next: () => this.listaPaciente()
+      })
   }
 
 }
