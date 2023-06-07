@@ -7,6 +7,8 @@ import { ObservadoraComponent } from './navegacao/observadora/observadora.compon
 import { ListaClinicaComponent } from './clinicas/lista-clinica/lista-clinica.component';
 import { ListaPacienteComponent } from './pacientes/lista-paciente/lista-paciente.component';
 import { CadastroPacienteComponent } from './pacientes/cadastro-paciente/cadastro-paciente.component';
+import { ClinicaDetalheComponent } from './clinicas/clinica-detalhe/clinica-detalhe.component';
+import { AtualizarClinicaComponent } from './clinicas/atualizar-clinica/atualizar-clinica.component';
 
 export const rotasConfig: Routes = [
 
@@ -15,9 +17,7 @@ export const rotasConfig: Routes = [
         redirectTo: '/home',
         pathMatch: 'full'
     },
-    { path: 'home',
-        component: HomeComponent
-    },
+    { path: 'home', component: HomeComponent },
     { path: 'contato', component: ContatoComponent },
     { path: 'sobre', component: SobreComponent },
     { path: 'teste-dados', component: DadosComponent },
@@ -25,5 +25,8 @@ export const rotasConfig: Routes = [
     { path: 'clinicas', component: ListaClinicaComponent },
     { path: 'pacientes', component: ListaPacienteComponent },
     { path: 'cadastro-paciente', component: CadastroPacienteComponent },
+    { path: 'clinica-detalhe/:id', component: ClinicaDetalheComponent },
+    { path: 'atualizar-clinica/:id', component: AtualizarClinicaComponent },
+
 
 ];

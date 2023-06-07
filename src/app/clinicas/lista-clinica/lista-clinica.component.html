@@ -3,7 +3,8 @@
       <div class="card-body">
         <h5 class="card-title">{{ clinica.nome }}</h5>
         <p class="card-text">{{ clinica.id }}</p>
-        <a href="#" class="btn btn-primary">Mais detalhes</a>
+        <a [routerLink]="['/clinica-detalhe', clinica.id]" class="btn btn-primary">Mais detalhes</a>
+        <a [routerLink]="['/atualizar-clinica', clinica.id]" class="btn btn-primary">Atualizar</a>
       </div>
     </div>
   </div>
