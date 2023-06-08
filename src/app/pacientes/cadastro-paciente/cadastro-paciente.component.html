@@ -7,7 +7,12 @@
             <div class="form-group">
                 <label class="col-md-2 control-label" for="nome">Nome da clínica</label>
                 <div class="col-md-10">
-                    <input class="form-control" id="nome" type="text" placeholder="Nome (requerido)" formControlName="nome"/>
+                    <input class="form-control" id="nome" type="text" placeholder="Nome (requerido)" formControlName="nome"
+                    [ngClass]="{'is-invalid': cadastroForm.get('nome')?.errors && (cadastroForm.get('nome')?.dirty || cadastroForm.get('nome')?.touched)}"
+                    />
+                    <span class="text-danger" *ngIf="cadastroForm.get('nome')?.errors && (cadastroForm.get('nome')?.dirty || cadastroForm.get('nome')?.touched)">
+                        <p>O nome é obrigatório</p>
+                    </span>
                 </div>
             </div>
 
@@ -25,10 +30,17 @@
             <div class="form-group">
                 <label class="col-md-2 control-label">E-mail</label>
                 <div class="col-md-10">
-                    <input class="form-control" id="email" type="text" placeholder="E-mail (requerido)" formControlName="email"/>
-                    <span class="text-danger" >
-                        <p></p>
+                    <input class="form-control" id="email" type="text" placeholder="E-mail (requerido)" formControlName="email" 
+                    [ngClass]="{'is-invalid': cadastroForm.get('email')?.errors && (cadastroForm.get('email')?.dirty || cadastroForm.get('email')?.touched)}"/>
+                    
+                    <span class="text-danger" *ngIf="cadastroForm.get('email')?.hasError('required') && (cadastroForm.get('email')?.dirty || cadastroForm.get('email')?.touched)">
+                        <p>O e-mail é obrigatório</p>
                     </span>
+                    
+                    <span class="text-danger" *ngIf="cadastroForm.get('email')?.hasError('email') && (cadastroForm.get('email')?.dirty || cadastroForm.get('email')?.touched)">
+                        <p>E-mail está com o formato inválido</p>
+                    </span>
+
                 </div>
             </div>
 
@@ -57,6 +69,10 @@
                     <span><button class="btn btn-success" id="Registrar" type="submit">Registrar</button></span>
                 </div>
             </div>
+
+            <p>O formulário é válido? {{ cadastroForm.valid }}</p>
+            <p>O formulário foi clicado? {{ cadastroForm.touched }}</p>
+            <p>O formulário já foi preenchido? {{ cadastroForm.dirty }}</p>
         </div>
     </form>
 </div>
